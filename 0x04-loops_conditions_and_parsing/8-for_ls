@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#displays The content of the current directory
+# cut -d (-d = delimiters)
+
+ls_=$(ls)
+
+for i in $ls_;
+    do
+        echo  "$i" | cut -d '-' -f2
+
+    done
