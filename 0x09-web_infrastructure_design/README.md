@@ -1,1 +1,3 @@
 0x09-web_infrastructure_design
+
+LINK miro: https://miro.com/welcomeonboard/NEoyUm1xallsVzN0Mk83dFVPUmZZM21HWFNUY0dLZ0Jja0Q5WHJhSDNYb1NYT0dKY3RBS0Q1OWRqWjZBWWpLSHwzMDc0NDU3MzYxNDk1ODcxODc0 
