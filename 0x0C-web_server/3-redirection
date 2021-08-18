@@ -8,5 +8,6 @@ sudo apt-get -y install nginx
 echo "Holberton School" > index.html
 sudo mv index.html /var/www/html
 
-sed -i 's/root \/var\/www\/html;/root \/var\/www\/html;\n\trewrite ^\/redirect_me https://intranet.hbtn.io/projects/266/' /etc/nginx/sites-available/default
+
+sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://github.com/jj131204 permanent;' /etc/nginx/sites-available/default
 sudo service nginx restart
