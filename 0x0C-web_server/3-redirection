@@ -8,5 +8,5 @@ sudo apt-get -y install nginx
 echo "Holberton School" > index.html
 sudo mv index.html /var/www/html
 
-sed -i 's/root \/var\/www\/html;/root \/var\/www\/html;\n\trewrite ^\/redirect_me http:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;/' /etc/nginx/sites-available/default
+sed -i 's/root \/var\/www\/html;/root \/var\/www\/html;\n\trewrite ^\/redirect_me https://intranet.hbtn.io/projects/266/' /etc/nginx/sites-available/default
 sudo service nginx restart
