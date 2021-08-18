@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # transfers a file from our client to a server
 
+sudo apt-get -y update
+sudo apt-get -y install nginx
 echo "Holberton School" > index.html
 sudo mv index.html /var/www/html
 sudo service nginx restart
