@@ -1,16 +1,8 @@
 #!/usr/bin/env bash
 # transfers a file from our client to a server
 
-
-sudo apt-get -y update
-sudo apt-get -y install nginx
-
-echo "Holberton School" > index.html
+echo "Holberton School" > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
-sudo mv index.html /var/www/html
-
-
-sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://github.com/jj131204/  permanent;' /etc/nginx/sites-available/default
-
-sudo sed -i '/listen 80 default_server;/a error_page 404 /error404.html;' /etc/nginx/sites-available/default
-sudo service nginx restart
+sed -i 's/root \/var\/www\/html;/root \/var\/www\/html;\n\trewrite ^\/redirect_me http:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;/' /etc/nginx/sites-available/default
+sed -i 's/root \/var\/www\/html;/root \/var\/www\/html;\n\terror_page 404 \/custom_404.html;/' /etc/nginx/sites-available/default
+service nginx restart
