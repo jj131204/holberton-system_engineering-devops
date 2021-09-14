@@ -20,8 +20,8 @@ if __name__ == "__main__":
 
     for task in todos:
         dict_ = {users.get('id'): [{"task": task.get('title'),
-                          "completed": task.get('completed'),
-                          "username": users.get('username')}]}
+                                    "completed": task.get('completed'),
+                                   "username": users.get('username')}]}
 
     with open('{}.json'.format(argv), mode='w') as test:
         json.dump(dict_, test)
