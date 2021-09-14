@@ -16,8 +16,8 @@ if __name__ == "__main__":
     users = requests.get(
                     "https://jsonplaceholder.typicode.com/users/{}"
                     .format(argv)).json()
-    todos = requests.get("https://jsonplaceholder.typicode.com/todos").json()
-
+    todos = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}"
+                         .format(argv)).json()
     with open('{}.csv'.format(argv), mode='w') as test:
         _csv = csv.writer(test, quoting=csv.QUOTE_ALL)
 
