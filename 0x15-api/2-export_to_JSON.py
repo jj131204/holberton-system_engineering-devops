@@ -16,7 +16,8 @@ if __name__ == "__main__":
     users = requests.get(
                     "https://jsonplaceholder.typicode.com/users/{}"
                     .format(argv)).json()
-    todos = requests.get("https://jsonplaceholder.typicode.com/todos").json()
+    todos = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}"
+                         .format(argv)).json()
 
     for task in todos:
         dict_ = {users.get('id'): [{"task": task.get('title'),
