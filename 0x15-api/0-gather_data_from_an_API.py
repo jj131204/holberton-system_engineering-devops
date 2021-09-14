@@ -31,4 +31,4 @@ if __name__ == "__main__":
     print("Employee {} is done with tasks({}/{}):".format(
         users.get('name'), done_tasks, total_tasks))
 
-    print(t_title)
+    print(t_title[:-1])
