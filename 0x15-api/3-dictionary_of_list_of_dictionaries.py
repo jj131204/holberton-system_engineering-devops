@@ -16,13 +16,11 @@ if __name__ == "__main__":
                     "https://jsonplaceholder.typicode.com/users").json()
     todos = requests.get("https://jsonplaceholder.typicode.com/todos").json()
 
-    for task in todos:
-        dict_ = {u.get('id'): [{"task": t.get('title'),
-                                "completed": t.get('completed'),
-                                "username": u.get('username')}
-                                 for t in todos if u.get('id') == t.get('userId')]
-               for u in users}
-
+    dict_ = {u.get('id'): [{"task": t.get('title'),
+                            "completed": t.get('completed'),
+                            "username": u.get('username')}
+                           for t in todos if u.get('id') == t.get('userId')]
+             for u in users}
 
     with open("todo_all_employees.json", mode='w') as test:
         json.dump(dict_, test)
