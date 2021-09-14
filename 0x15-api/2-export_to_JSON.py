@@ -19,10 +19,9 @@ if __name__ == "__main__":
     todos = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}"
                          .format(argv)).json()
 
-    for task in todos:
-        dict_ = {users.get('id'): [{"task": task.get('title'),
-                                    "completed": task.get('completed'),
-                                   "username": users.get('username')}]}
+    dict_ = {users.get('id'): [{"task": task.get('title'),
+                            "completed": task.get('completed'),
+                           "username": users.get('username')}for task in todos]}
 
     with open('{}.json'.format(argv), mode='w') as test:
         json.dump(dict_, test)
