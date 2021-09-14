@@ -20,8 +20,9 @@ if __name__ == "__main__":
                          .format(argv)).json()
 
     dict_ = {users.get('id'): [{"task": task.get('title'),
-                            "completed": task.get('completed'),
-                           "username": users.get('username')}for task in todos]}
+                                "completed": task.get('completed'),
+                               "username": users.get('username')}
+                               for task in todos]}
 
     with open('{}.json'.format(argv), mode='w') as test:
         json.dump(dict_, test)
