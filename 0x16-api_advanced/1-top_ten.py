@@ -16,8 +16,8 @@ def top_ten(subreddit):
         print('None')
 
     else:
-         data = test.get('data').get('children')
-         for i, obj in enumerate(data):
-             if i == 11:
-                 break
-             print(obj.get('data').get('title'))
+        data = test.get('data').get('children')
+        for i, obj in enumerate(data):
+            if i == 11:
+                break
+            print(obj.get('data').get('title'))
